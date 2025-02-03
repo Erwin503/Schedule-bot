@@ -13,6 +13,9 @@ const vk = new VK({
 
 // Путь к файлу для хранения chat id
 const CHAT_ID_FILE = path.resolve(__dirname, "chatId.txt");
+// путь для докера
+// const CHAT_ID_FILE = path.resolve(process.cwd(), 'chatId.txt');
+
 
 /**
  * Обновляет файл с chat id:
@@ -128,11 +131,7 @@ vk.updates.on("message", async (ctx: MessageContext) => {
 (async () => {
   const chatId = await getChatIdFromFile();
   if (chatId) {
-    scheduleMessage(
-      "10:00",
-      "Оффтоп закрыт. Всем хорошего дня",
-      chatId
-    );
+    scheduleMessage("10:00", "Оффтоп закрыт", chatId);
     scheduleMessage("20:00", "Оффтоп открыт", chatId);
   } else {
     console.error(

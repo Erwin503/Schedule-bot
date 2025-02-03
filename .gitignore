@@ -24,10 +24,7 @@ logs/
 .pm2/
 pm2.log
 
-# Docker файлы
-Dockerfile*
 docker-compose*
-.dockerignore
 
 # Системные файлы
 .DS_Store
