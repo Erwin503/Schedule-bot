@@ -133,11 +133,6 @@ vk.updates.on("message", async (ctx: MessageContext) => {
   if (chatId) {
     scheduleMessage("10:00", "Оффтоп закрыт", chatId);
     scheduleMessage("20:00", "Оффтоп открыт", chatId);
-    await vk.api.messages.send({
-      chat_id: chatId,
-      message: "test",
-      random_id: Date.now(), // для предотвращения дублирования
-    });
   } else {
     console.error(
       "Chat id не найден. Проверьте файл chatId.txt или отправьте команду /start для его создания."
